@@ -152,7 +152,7 @@ const parameters : Input[] = [
 
 export const IMPACT:Calculator = {
     id:"impact-score",
-    name:"IMPACT (Index for Mortality Prediction After Cardiac Transplantation",
+    name:"IMPACT (Index for Mortality Prediction After Cardiac Transplantation)",
     desc:"IMPACT score is a risk assessment tool used to predict 1-year mortality following a Heart Transplantation based on 12 parameters (including renal function, liver function, age)",
     inputs:parameters,
     calc_func:(values : Values):number => {
