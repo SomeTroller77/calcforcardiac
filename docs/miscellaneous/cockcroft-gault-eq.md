@@ -16,7 +16,7 @@
 ### Formula
 #### It uses the following formula to calculate the GFR
 $$
-GFR = \frac{(140 - Age)}{(72 * Creatinine)} \times 0.85 \text{(if patient is female)}
+GFR = \frac{(140 - Age)}{(72 \times Creatinine)} \times 0.85 \text{(if patient is female)}
 $$
 
 ## Interpretation
