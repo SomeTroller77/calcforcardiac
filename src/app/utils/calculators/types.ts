@@ -5,15 +5,18 @@ export interface Calculator {
     unit?:string,
     inputs:Input[],
     calc_func:Function,
-    interpret_func:Function
+    interpret_func:Function,
+    customComponent?:React.FC
 }
 interface inputOptions {
     label:string,
-    value:string | number | Date;
+    value:string | number ;
 }
 export interface Input{
     id:string,
-    type: "number" | "text" | "radio",
+    name:string,
+    placeholder:string,
+    type: "number" | "text" | "select",
     inputOptions?:inputOptions[],
     min?:number,
     max?:number,
@@ -35,3 +38,5 @@ export interface Section {
     svg:string,
     calculators:Calculator[]
 }
+
+export type Values = Record<string, string | number >;

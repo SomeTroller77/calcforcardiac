@@ -1,12 +1,12 @@
 "use client"
-
+import Link from "next/link";
 type Props = {
   navbarToggle: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function Navbar({navbarToggle}: Props){
     return(
-        <div className="navbar bg-base-100 shadow-sm z-50">
+        <div className="navbar h-14 bg-base-100 shadow-sm z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <button onClick={
@@ -21,11 +21,13 @@ export default function Navbar({navbarToggle}: Props){
                     
                 </div>
             </div>
-            <div className="navbar-center">
-                <a href="/" className="flex items-center gap-2 leading-none translate-y-[10px]">
-                    <img src="/calcforcardiac_logo.png" className="w-32 h-32 object-contain" />
-                    <span className="text-lg font-semibold flex items-center relative top-[-10px]">CalcForCardiac</span>
-                </a>
+            <div className="navbar-center flex items-center justify-center">
+                <Link href="/" className="flex items-center gap-2 w-fit">
+                    <img src="/calcforcardiac_logo.png" className="h-9 md:h-10 w-auto object-contain" />
+                    <span className="text-lg font-semibold">
+                        CalcForCardiac
+                    </span>
+                </Link>
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">

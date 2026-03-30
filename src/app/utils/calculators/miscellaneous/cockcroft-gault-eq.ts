@@ -1,9 +1,11 @@
-import { Calculator, Input, Interpretation } from "../types";
+import { Calculator, Input, Interpretation, Values } from "../types";
 
 const parameters:Input[] = [
     {
         id:"gender",
-        type:"radio",
+        name:"Gender",
+        placeholder:"Enter your gender",
+        type:"select",
         inputOptions:[
             {
                 label:"Male",
@@ -19,6 +21,8 @@ const parameters:Input[] = [
     {
         id:"age",
         type:"number",
+        name:"Age",
+        placeholder:"Enter your age",
         min:18,
         max:95,
         required:true
@@ -26,6 +30,8 @@ const parameters:Input[] = [
     {
         id:"creatinine",
         type:"number",
+        name:"Creatinine",
+        placeholder:"Enter your serum creatinine values",
         min:0.2,
         max:20,
         required:true
@@ -33,11 +39,18 @@ const parameters:Input[] = [
     {
         id:"weight",
         type:"number",
-        min:0,
+        name:"Weight",
+        placeholder:"Enter your weight in kilograms",
+        min:10,
+        max:100 ,
         required:true
     }
 ];
-function calc_func(gender:"male" | "female", age:number, creatinine:number, weight:number):number{
+function calc_func(values : Values):number{
+    const gender = values.gender as "male" | "female";
+    const age = values.age as number;
+    const weight = values.weight as number;
+    const creatinine = values.creatinine as number;
     return gender === "male" 
     ? ((140 - age) * weight)/(72 * creatinine)
     : (((140 - age) * weight)/(72 * creatinine)) * 0.85;
