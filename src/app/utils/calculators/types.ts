@@ -22,11 +22,12 @@ export interface Input{
     max?:number,
     required?:boolean,
     defaultUnit?:string,
-    unitOptions?:string[]    
+    unitOptions?:string[],
+    handleDataChange?:Function    
 }
 
 export interface Interpretation{
-    level?: "none" | "low" | "moderate" | "high" | "severe",
+    level: "none" | "low" | "moderate" | "high" | "severe",
     diagnosis?:string,
     message:string,
     advice?:string

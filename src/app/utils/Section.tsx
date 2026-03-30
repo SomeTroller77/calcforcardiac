@@ -8,7 +8,11 @@ export default function Section({sectionName, Calculators, id} : {sectionName:st
             <ul>
                 {Calculators.map((e) => {
                     return(
-                        <li><a key={e.id} href={`/calculate/${id}/${e.id}`}>{e.name}</a></li>
+                        <li key={e.id}>
+                            <a href={`/calculate/${id}/${e.id}`}>
+                                {e.name}
+                            </a>
+                        </li>
                     )
                 })}
             </ul>

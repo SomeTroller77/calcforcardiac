@@ -4,7 +4,7 @@ const parameters:Input[] = [
     {
         id:"gender",
         name:"Gender",
-        placeholder:"Enter your gender",
+        placeholder:"Select gender",
         type:"select",
         inputOptions:[
             {
@@ -22,7 +22,7 @@ const parameters:Input[] = [
         id:"age",
         type:"number",
         name:"Age",
-        placeholder:"Enter your age",
+        placeholder:"Enter age",
         min:18,
         max:95,
         required:true
@@ -31,7 +31,7 @@ const parameters:Input[] = [
         id:"creatinine",
         type:"number",
         name:"Creatinine",
-        placeholder:"Enter your serum creatinine values",
+        placeholder:"Enter serum creatinine values in mg/dL",
         min:0.2,
         max:20,
         required:true
@@ -40,7 +40,7 @@ const parameters:Input[] = [
         id:"weight",
         type:"number",
         name:"Weight",
-        placeholder:"Enter your weight in kilograms",
+        placeholder:"Enter weight in kilograms",
         min:10,
         max:100 ,
         required:true
@@ -52,8 +52,8 @@ function calc_func(values : Values):number{
     const weight = values.weight as number;
     const creatinine = values.creatinine as number;
     return gender === "male" 
-    ? ((140 - age) * weight)/(72 * creatinine)
-    : (((140 - age) * weight)/(72 * creatinine)) * 0.85;
+    ? Math.floor(((140 - age) * weight)/(72 * creatinine))
+    : Math.floor((((140 - age) * weight)/(72 * creatinine)) * 0.85);
 }
 function interpret_func(gfr:number):Interpretation{
     if(gfr >= 90){
