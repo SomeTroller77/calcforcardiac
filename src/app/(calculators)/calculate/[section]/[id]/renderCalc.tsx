@@ -35,9 +35,9 @@ export default function RenderCalculator({section, id} : {section:string, id:str
                 <p className="text-gray-500 mt-1 max-w-xl">
                     {calculator?.desc}
                 </p>
-                <h1 className="text-1xl font-semibold">
+                {calculator?.unit ? <h1 className="text-1xl font-semibold">
                     Unit of the value:- {calculator?.unit}
-                </h1>
+                </h1> : null}
             </div>
             <div className="max-w-2xl">
                 <form onSubmit={(e: React.SubmitEvent) => {

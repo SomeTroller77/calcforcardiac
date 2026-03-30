@@ -15,8 +15,8 @@ interface inputOptions {
 export interface Input{
     id:string,
     name:string,
-    placeholder:string,
-    type: "number" | "text" | "select",
+    placeholder?:string,
+    type: "number" | "text" | "select" | "checkbox",
     inputOptions?:inputOptions[],
     min?:number,
     max?:number,
@@ -40,4 +40,4 @@ export interface Section {
     calculators:Calculator[]
 }
 
-export type Values = Record<string, string | number >;
+export type Values = Record<string, string | number | boolean >;

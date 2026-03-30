@@ -56,11 +56,27 @@ export default function InputComponent({id, type, inputOptions, min, max, requir
                         <option value="" disabled hidden>{placeholder}</option>
                         {inputOptions?.map(e => {
                             return(
-                                <option key={e.label} value={e.value}>{e.value}</option>
+                                <option key={e.label} value={e.value}>{e.label}</option>
                             )
                         })}
                     </select>
                 {/* <span className="label text-red-400">Optional</span> */}
+            </fieldset>
+        )
+    }else if(type === "checkbox"){
+        return(
+            <fieldset className="fieldset bg-white bg-base-100 border border-base-300 rounded-box w-full min-w-0 p-2">
+                <legend className="fieldset-legend text-black">{name}</legend>
+                <label className="label flex gap-3 items-start w-full">
+                    <input type="checkbox" 
+                    className="checkbox checkbox-neutral border-solid border-black mt-1 shrink-0"
+                    onChange={(e) => {
+                        handleDataChange !== undefined ? handleDataChange(id, e.target.checked) : null;
+                    }} />
+                    <span className="text-sm break-words whitespace-normal">
+                        {placeholder}
+                    </span>
+                </label>
             </fieldset>
         )
     }
