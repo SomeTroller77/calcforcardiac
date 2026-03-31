@@ -5,6 +5,7 @@ import Input from "@/app/utils/Input";
 import Result from "@/app/utils/Result";
 import { CalculatorRegistry } from "@/app/utils/calculators/registry";
 import { Interpretation } from "@/app/utils/calculators/types";
+import { Metadata } from "next";
 import { useState } from "react";
 
 export default function RenderCalculator({section, id} : {section:string, id:string}){

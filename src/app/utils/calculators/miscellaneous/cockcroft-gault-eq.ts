@@ -55,44 +55,44 @@ function calc_func(values : Values):number{
     ? Math.floor(((140 - age) * weight)/(72 * creatinine))
     : Math.floor((((140 - age) * weight)/(72 * creatinine)) * 0.85);
 }
-function interpret_func(gfr:number):Interpretation{
-    if(gfr >= 90){
+function interpret_func(crcl:number):Interpretation{
+    if(crcl >= 90){
         return {
             level:"none",
-            message:"Glomerular Filtration Rate (GFR) is normal or on the higher side, To be correlated with other clinical clues",
+            message:"Creatinine Clearance (CrCl) is normal or on the higher side, To be correlated with other clinical clues",
             diagnosis:"CKD Stage 1"
         }
-    }else if(gfr < 90 && gfr >= 60){
+    }else if(crcl < 90 && crcl >= 60){
         return {
             level:"low",
-            message:"Glomerular Filtration Rate (GFR) is slightly reduced, To be correlated with other clinical clues",
+            message:"Creatinine Clearance (CrCl) is slightly reduced, To be correlated with other clinical clues",
             diagnosis:"CKD Stage 2"
         }
-    }else if(gfr < 60 && gfr >= 45){
+    }else if(crcl < 60 && crcl >= 45){
         return{
             level:"moderate",
-            message:"Glomerular Filtration Rate (GFR) is moderately reduced",
+            message:"Creatinine Clearance (CrCl) is moderately reduced",
             advice:"Consult a Nephrologist",
             diagnosis:"CKD Stage 3A"
         }
-    }else if(gfr < 45 && gfr >= 30){
+    }else if(crcl < 45 && crcl >= 30){
         return{
             level:"high",
-            message:"Glomerular Filtration Rate (GFR) is significantly reduced",
+            message:"Creatinine Clearance (CrCl) is significantly reduced",
             advice:"Consult a Nephrologist urgently",
             diagnosis:"CKD Stage 3B"
         }
-    }else if(gfr < 30 && gfr >= 15){
+    }else if(crcl < 30 && crcl >= 15){
         return{
             level:"high",
-            message:"Glomerular Filtration Rate (GFR) is largely reduced",
+            message:"Creatinine Clearance (CrCl) is largely reduced",
             advice:"Consult a Nephrologist urgently",
             diagnosis:"CKD Stage 4"
         }
     }else{
         return{
             level:"severe",
-            message:"Glomerular Filtration Rate (GFR) is severely reduced",
+            message:"Creatinine Clearance (CrCl) is severely reduced",
             advice:"Consult a Nephrologist urgently to consider dialysis",
             diagnosis:"CKD Stage 5 / ESRD (End Stage Renal Disease)"
         }

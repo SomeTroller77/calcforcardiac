@@ -7,9 +7,9 @@ export default function Result({interpretation, calculated_value, unit} : {inter
     if(level === "none" || level === "low"){
         levelClass = "bg-success";
     }else if(level === "moderate"){
-        levelClass = "bg-orange-600";
+        levelClass = "bg-orange-600 text-white";
     }else if(level === "high" || level === "severe"){
-        levelClass = "bg-red-500";
+        levelClass = "bg-red-500 text-white";
     }else{
         levelClass = "bg-white";
     }

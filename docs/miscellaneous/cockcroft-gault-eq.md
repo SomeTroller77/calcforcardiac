@@ -1,6 +1,6 @@
 # CockCroft Gault Equation
 
-### CockCroft Gault Equation is an equation which is used to calculate the eGFR (Estimated Glomerular Filtration Rate) of a patient
+### CockCroft Gault Equation is an equation which is used to calculate the CrCl (Creatinine Clearance) of a patient
 
 ### Unit:- mL/min
 
@@ -14,9 +14,9 @@
 
 
 ### Formula
-#### It uses the following formula to calculate the GFR
+#### It uses the following formula to calculate the CrCl
 $$
-GFR = \frac{(140 - Age)}{(72 \times S. Creatinine)} \times 0.85 \text{(if patient is female)}
+CrCl = \frac{(140 - Age)}{(72 \times S. Creatinine)} \times 0.85 \text{(if patient is female)}
 $$
 
 ## Interpretation
@@ -31,4 +31,4 @@ $$
 | **less than 15 mL/min** | **CKD Stage 5 / ESRD** | **Renal Function is severely reduced** |
 
 ### Notice:-
-#### This equation of calculating eGFR is not as accurate, other equations like MDRD and CKD-EPI are recommended. Equation is not reliable in the cases of AKI (Acute Kidney Injury). Consultation with a Nephrologist is always recommended. No diagnosis should be made just on the basis of a medical calculator. Other clinical clues are to be taken into account (Urinalysis, UACR(Urine Albumin to Creatinine Ratio) etc.)
+#### This equation of calculating Creatinine Clearance  is not as accurate, other equations like MDRD and CKD-EPI are recommended. Equation is not reliable in the cases of AKI (Acute Kidney Injury). Consultation with a Nephrologist is always recommended. No diagnosis should be made just on the basis of a medical calculator. Other clinical clues are to be taken into account (Urinalysis, UACR(Urine Albumin to Creatinine Ratio) etc.)
