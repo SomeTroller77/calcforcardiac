@@ -13,9 +13,9 @@
 | ----------- | -------------- |
 | less than 9 | Low risk (under 1.9%) | 
 | 10 to 19 | Low to Moderate (6.0% - 19.6%) |
-| 20 to 29 | Moderate risk (19.6% - 52.6%) | 
-| 30 to 39 | High risk (52.6% - 71.3%) |
-| more than 40 | Extremely high risk (71.3% - 100%) |
+| **20 to 29** | **Moderate risk (19.6% - 52.6%)** | 
+| **30 to 39** | **High risk (52.6% - 71.3%)** |
+| **more than 40** | **Extremely high risk (71.3% - 100%)** |
 
 ### Formula to calculate MELD:-
 The MELD score is calculated using the following formula:-
