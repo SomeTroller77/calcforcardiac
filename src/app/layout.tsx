@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import 'animate.css';
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "CalcForCardiac",
@@ -17,6 +18,7 @@ export default function RootLayout({
       lang="en"
     >
       <body className="min-h-full flex flex-col">{children}</body>
+      <Analytics/>
     </html>
   );
 }
