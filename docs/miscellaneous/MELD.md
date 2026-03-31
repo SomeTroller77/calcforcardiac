@@ -21,7 +21,7 @@
 The MELD score is calculated using the following formula:-
 
 $$
-\textbf{MELD} = (9.57 \times \ln(\text{Serum Creatinine})) + (3.78 \times \text{Serum Bilirubin}) + (11.2 \times \text{INR}) + 6.43
+\textbf{MELD} = (9.57 \times \ln(\text{Serum Creatinine})) + (3.78 \times \ln(\text{Serum Bilirubin})) + (11.2 \times \ln(\text{INR})) + 6.43
 $$
 
 ### Notice:-
