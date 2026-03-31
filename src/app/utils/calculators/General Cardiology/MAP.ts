@@ -24,6 +24,7 @@ export const MAP : Calculator = {
     name:"Mean Arterial Pressure",
     desc:"Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle, that is, systole and diastole. It is influenced by Cardiac Output (CO) and Systemic Vascular Resistance (SVR) and used to check whether the vital organs of the body are well-perfused or not.",
     inputs:parameters,
+    unit:"mmHg",
     calc_func:(values:Values):number => {
         const sbp = values.sbp as number;
         const dbp = values.dbp as number;
