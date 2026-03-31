@@ -15,5 +15,20 @@
 | Whether Intra-Aortic Balloon Pump was implanted | - | - |
 | Whether Mechanical Ventilation was done pre-transplant | - | - |
 | Race of the patient | - | - |
-| Whtehr Temporary Circulation Support was needed (incl. ECMO and e-VADs) | - | - |
+| Whether Temporary Circulation Support was needed (incl. ECMO and e-VADs) | - | - |
 | Ventricular Assist Device used | - | - | 
+
+### Few important points:-
+#### A maximum of 50 points are possible while calculating the score, Here are the ranges of the score along with the predicted risk of mortality
+
+| Range | Risk |
+| ------- | ------ |
+| 0 - 4 | really low |
+| 5 - 9 | low |
+| 10 - 14 | moderate |
+| **15 - 19** | **high** | 
+| **>= 20** | **really high** | 
+
+
+### Notice
+Many researches state that the IMPACT score is not as accurate and that it is false in many of the cases. Clinical clues are to be referred to aswell
