@@ -33,7 +33,7 @@ export default function InputComponent({id, type, inputOptions, min, max, requir
                             }else{
                                 setError("");
                                 setErrorStatus(false);
-                                handleDataChange !== undefined ? handleDataChange(id, e.target.value) : null;
+                                handleDataChange !== undefined ? handleDataChange(id, e.target.value, type) : null;
                             }
                         }}
                         />

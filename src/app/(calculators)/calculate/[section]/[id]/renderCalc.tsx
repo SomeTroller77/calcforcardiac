@@ -12,13 +12,22 @@ export default function RenderCalculator({section, id} : {section:string, id:str
     const calculator = CalculatorRegistry[section].calculators.find(e => e.id === id);
     const [form, setForm] = useState<Record<string, string | number>>({});
     const [value, setValue] = useState<string | number>("");
-    function handleDataChange(key:string, value:string){
-        setForm(prev => {
-            return {
-                ...prev,
-                [key]:value
-            }
-        });
+    function handleDataChange(key:string, value:string, type: "number" | "string" | boolean){
+        if(type === "number"){
+            setForm(prev => {
+                return {
+                    ...prev,
+                    [key]:Number(value)
+                }
+            });
+        }else{
+            setForm(prev => {
+                return {
+                    ...prev,
+                    [key]:value
+                }
+            });
+        }
     }
     const [showResult, setResultStatus] = useState<boolean>(false);
     const [result, setResult] = useState<Interpretation>({
