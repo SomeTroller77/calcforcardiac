@@ -13,7 +13,6 @@ export default function Result({interpretation, calculated_value, unit} : {inter
     }else{
         levelClass = "bg-white";
     }
-    console.log(levelClass);
     return(
         <div className={`card max-w-auto ${levelClass} bg-base-100 shadow-sm mt-5 ${levelClass}`}>
             <div className="card-body">

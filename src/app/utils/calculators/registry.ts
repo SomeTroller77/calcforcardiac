@@ -1,7 +1,7 @@
 import { cockcroftGault } from "./miscellaneous/cockcroft-gault-eq";
 import { IMPACT } from "./transplantation/IMPACT";
 import { Section } from "./types";
-
+import { MELD } from "./miscellaneous/MELD";
 export const CalculatorRegistry : Record<string, Section> = {
     transplantation:{
         id:"transplantation",
@@ -18,7 +18,8 @@ export const CalculatorRegistry : Record<string, Section> = {
         textColor:"#ccc",
         svg:"",
         calculators:[
-            cockcroftGault
+            cockcroftGault,
+            MELD
         ]
     }
 }

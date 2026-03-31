@@ -25,7 +25,6 @@ export default function RenderCalculator({section, id} : {section:string, id:str
         level:"none",
         message:"none"
     });
-    console.log(form);
     return calculator ? (
         <>
             <div className="mb-6 mt-10">
