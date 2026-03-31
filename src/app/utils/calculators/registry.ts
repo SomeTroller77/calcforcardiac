@@ -4,6 +4,7 @@ import { Section } from "./types";
 import { MELD } from "./Utilities/MELD";
 import { MAP } from "./General Cardiology/MAP";
 import { TIMI } from "./Emergency/TIMI_score";
+
 export const CalculatorRegistry : Record<string, Section> = {
     generalCardiology:{
         id:"generalCardiology",
