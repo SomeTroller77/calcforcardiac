@@ -9,6 +9,7 @@
   grid-area: navbar;
   background: 	#ed1b24;     
   color: #FFFFFF;
+  position:sticky;
 }
 #logo{
   transform: translateY(1px);

@@ -6,8 +6,8 @@ type Props = {
 
 export default function Navbar({navbarToggle}: Props){
     return(
-        <div className="navbar h-14 bg-base-100 shadow-sm z-50">
-            <div className="navbar-start">
+        <div className="navbar h-14 bg-base-100 shadow-sm z-50 sticky top-0">
+            <div className="navbar-start sticky">
                 <div className="dropdown">
                     <button onClick={
                         () => {

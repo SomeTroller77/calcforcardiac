@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { Calculator } from "./calculators/types";
 
 export default function Section({sectionName, Calculators, id} : {sectionName:string, Calculators:Calculator[], id:string}){
-    const [bookmarks, setBookmarks] = useState<string[]>([]);
+    const [bookmarks, setBookmarks] = useState<{section:string, id:string}[]>([]);
     useEffect(() => {
         const bookmarkedStr:string = localStorage.getItem("bookmarks") || "[]";
-        const bookmarkedObj : string[] = JSON.parse(bookmarkedStr);
+        const bookmarkedObj : {section:string, id:string}[] = JSON.parse(bookmarkedStr);
+        console.log(bookmarkedObj);
         setBookmarks(bookmarkedObj);
     }, [])
     return(
@@ -30,18 +31,18 @@ export default function Section({sectionName, Calculators, id} : {sectionName:st
                                 className="shrink-0"
                                 onClick={() => {
                                     const bookmarks:string = localStorage.getItem("bookmarks") || "[]";
-                                    var bookmarksArr:string[] = JSON.parse(bookmarks);
-                                    if(bookmarksArr.indexOf(id) !== -1){
-                                        bookmarksArr = bookmarksArr.filter(e => e !== id);
+                                    var bookmarksArr:{section:string, id:string}[] = JSON.parse(bookmarks);
+                                    if(bookmarksArr.findIndex(f => e.id === f.id) !== -1){
+                                        bookmarksArr = bookmarksArr.filter(g => g.id !== e.id);
                                     }else{
-                                        bookmarksArr.push(id)
+                                        bookmarksArr.push({section:id, id:e.id});
                                     }
                                     setBookmarks(bookmarksArr);
                                     localStorage.setItem("bookmarks", JSON.stringify(bookmarksArr));
                                 }}
                             >
 
-                                { bookmarks.find(e => e === id) ? <svg
+                                { bookmarks.find(f => e.id === f.id) ? <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         x="0px"
                                         y="0px"
