@@ -39,5 +39,15 @@ export interface Section {
     svg:string,
     calculators:Calculator[]
 }
-
+export interface pastUsed  {
+    calcInfo : {
+        section: string,
+        id: string,
+        name: string
+    },
+    value: string | number,
+    interpretation: Interpretation,
+    formData: object,
+    unit: string | undefined
+}
 export type Values = Record<string, string | number | boolean >;

@@ -48,7 +48,7 @@ const parameters:Input[] = [
 
 export const TIMI:Calculator = {
     id:"timi-score",
-    name:"Thrombolysis in Myocardial Infarction (TIMI) Score for UA and NSTEMI",
+    name:"Thrombolysis in Myocardial Infarction (TIMI) Score",
     desc:"TIMI (Thrombolysis in Myocardial Infarction) Score is a validated, 7-point clinical tool used to predict the 14-day mortality and ischemic events in patients with unstable angina or NSTEMI",
     inputs:parameters,
     calc_func:(values : Values):number => {

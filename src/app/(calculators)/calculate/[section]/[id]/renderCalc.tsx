@@ -4,8 +4,7 @@ import InputComponent from "@/app/utils/Input";
 import Input from "@/app/utils/Input";
 import Result from "@/app/utils/Result";
 import { CalculatorRegistry } from "@/app/utils/calculators/registry";
-import { Interpretation } from "@/app/utils/calculators/types";
-import { Metadata } from "next";
+import { Interpretation, pastUsed } from "@/app/utils/calculators/types";
 import { useState } from "react";
 
 export default function RenderCalculator({section, id} : {section:string, id:string}){
@@ -53,8 +52,25 @@ export default function RenderCalculator({section, id} : {section:string, id:str
                     e.preventDefault();
                     setResultStatus(true);
                     const calculatedValue = calculator.calc_func(form);
+                    const interpretation = calculator.interpret_func(calculatedValue)
                     setValue(calculatedValue);
-                    setResult(calculator.interpret_func(calculatedValue));
+                    setResult(interpretation);
+                    const values : string = localStorage.getItem("pastUsed") || "[]";
+                    const valuesobj : pastUsed[] = JSON.parse(values);
+                    valuesobj.push(
+                        {
+                            calcInfo:{
+                                section:section,
+                                id:id,
+                                name:calculator.name
+                            },
+                            value: calculatedValue,
+                            interpretation: interpretation,
+                            formData: form,
+                            unit:calculator.unit 
+                        }
+                    );
+                    localStorage.setItem("pastUsed", JSON.stringify(valuesobj));
                 }}>
                     <div className="card max-w-auto bg-white bg-base-100 shadow-sm">
                         <div className="card-body">
@@ -74,6 +90,8 @@ export default function RenderCalculator({section, id} : {section:string, id:str
                             interpretation={result}
                             calculated_value={value}
                             unit={calculator.unit ?? ""}
+                            section={undefined}
+                            id={undefined}
                         />
                     </h3> : null}
                 </form>

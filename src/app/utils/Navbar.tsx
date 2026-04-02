@@ -22,7 +22,7 @@ export default function Navbar({navbarToggle}: Props){
                 </div>
             </div>
             <div className="navbar-center flex items-center justify-center">
-                <Link href="/" className="flex items-center gap-2 w-fit">
+                <Link href="/calculators" className="flex items-center gap-2 w-fit">
                     <img src="/calcforcardiac_logo.png" className="h-9 md:h-10 w-auto object-contain" />
                     <span className="text-lg font-semibold">
                         CalcForCardiac
