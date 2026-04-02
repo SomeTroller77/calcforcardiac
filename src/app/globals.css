@@ -58,3 +58,16 @@
   height:100%;
   width: 100%;
 }
+
+@keyframes ecgMove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ecg {
+  animation: ecgMove 6s linear infinite;
+}
