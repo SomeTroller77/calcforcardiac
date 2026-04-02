@@ -16,7 +16,7 @@
 ### Formula
 #### It uses the following formula to calculate the CrCl
 $$
-CrCl = \frac{(140 - Age)}{(72 \times S. Creatinine)} \times 0.85 \text{(if patient is female)}
+CrCl = \frac{(140 - Age)} \times \text{Weight}{(72 \times S. Creatinine)} \times 0.85 \text{(if patient is female)}
 $$
 
 ## Interpretation
