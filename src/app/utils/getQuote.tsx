@@ -112,18 +112,18 @@ export default function GetQuote(){
     const [quote, setQuote] = useState<{quote:string, author:string}>({quote:"", author:""});
     useEffect(() => {
         setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-    }, [])
+    }, []);
     
     return(
             <div className="mt-5">
                 <div className="chat chat-start">
                     <div className="chat-bubble bg-blue-200 text-blue-900 border-blue-200">
                         <blockquote cite="https://www.huxley.net/bnw/four.html">
-                                <p>
+                                <p suppressHydrationWarning>
                                 {quote.quote}
                                 </p>
                             </blockquote>
-                            <p>—<cite>{quote.author}</cite></p>
+                            <p suppressHydrationWarning>—<cite suppressHydrationWarning>{quote.author}</cite></p>
                     </div>
                 </div>
                 

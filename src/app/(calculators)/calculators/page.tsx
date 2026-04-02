@@ -55,7 +55,7 @@ export default function Calculators(){
                 <div className="card border-4 border-[#ed1b24] bg-white text-black w-full mt-5">
                     <div className="card-body">
                         <h2 className="card-title">Bookmarks: ({bookmarks?.length})</h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {bookmarks?.length !== 0 ? bookmarks?.map(e => {
                                         console.log(e.id);
                                         const calc = CalculatorRegistry[e.section].calculators.find(c => c.id === e.id)
