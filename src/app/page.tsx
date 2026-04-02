@@ -47,7 +47,10 @@ export default function Home(){
                   When every second counts, clarity matters. CalcForCardiac gives you instant, precise cardiac calculations — no clutter, no login, just what you need.
                 </p>
                 <p className="text-sm text-gray-500 mt-3">
-                  No login required • Free • Instant results
+                  No login required • Free • Instant results 
+                </p>
+                <p className="text-xs text-gray-600 mt-1">
+                  Made with ❤️ by Saksham Vitwekar
                 </p>
                 <div className="flex gap-4 justify-center mt-6 overflow-hidden">
                     <Link href={"/calculators"}><button className="btn bg-[#ef4444] hover:bg-[#bb0707]">Get Started</button></Link>
@@ -99,7 +102,7 @@ export default function Home(){
           <br/>
           <Link href={"https://github.com/SomeTroller77"}>
             <p className="text-xs text-gray-500 mt-16 mb-8 text-center">
-              Built with ❤️ by Saksham Vitwekar
+              
             </p>
           </Link>
         </div>
