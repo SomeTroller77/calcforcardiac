@@ -2,14 +2,33 @@
 @plugin "daisyui";
 .calculators-container{
   display: grid;
-  grid-template-areas:"navbar navbar" "sidebar content" "footer footer";
+  grid-template-areas:
+    "navbar"
+    "content"
+    "footer";
   height: 100vh;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr 40px;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  .calculators-container {
+    grid-template-areas:
+      "navbar navbar"
+      "sidebar content"
+      "footer footer";
+
+    grid-template-columns: 300px 1fr;
+  }
 }
 .navbar{
   grid-area: navbar;
-  background: 	#ed1b24;     
+  background: #ed1b24;
   color: #FFFFFF;
-  position:sticky;
+  position: sticky;
+  top: 0;      
+  z-index: 50;
 }
 #logo{
   transform: translateY(1px);
@@ -24,9 +43,10 @@
   background: #F9FAFB;  /* soft white */
   color: black;
 }
-.footer{
+.footer-area{
   grid-area: footer;
-  background: #cccccc;   
+  background: #ed1b24;
+    
 }
 .website-name {
   font-size: 18px;

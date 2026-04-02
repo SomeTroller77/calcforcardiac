@@ -26,15 +26,13 @@ export default function Calculators(){
                 <GetQuote/>
                 {pastUsedObj.length !== 0 ? <div className="card card-border bg-white text-black w-full mt-5">
                     <div className="card-body">
-                        <h2 className="card-title justify-center">Past Results:</h2>
+                        <h2 className="card-title justify-center">Past Results: ({pastUsedObj.length})</h2>
                         <div className="flex flex-col justify-center mt-2">
                         <Result id={pastUsedObj[index].calcInfo.id} 
                         section={pastUsedObj[index].calcInfo.section} 
                         interpretation={pastUsedObj[index].interpretation} 
                         calculated_value={pastUsedObj[index].value} 
                         unit={pastUsedObj[index].unit}/>
-                    
-                    <h1>Empty</h1>
                 </div>
                         <div className="card-actions justify-center">
                             <div className="join mt-2 self-center">
@@ -52,17 +50,17 @@ export default function Calculators(){
                             </div>
                         </div>
                     </div>
-                </div> : <h2>No past results were found</h2>}
+                </div> : null}
                 
                 <div className="card border-4 border-[#ed1b24] bg-white text-black w-full mt-5">
                     <div className="card-body">
-                        <h2 className="card-title">Bookmarks:</h2>
+                        <h2 className="card-title">Bookmarks: ({bookmarks?.length})</h2>
                         <div className="grid grid-cols-2 gap-4">
                                 {bookmarks?.length !== 0 ? bookmarks?.map(e => {
                                         console.log(e.id);
                                         const calc = CalculatorRegistry[e.section].calculators.find(c => c.id === e.id)
                                         return <Bookmark section={e.section} name={calc?.name || "Not Loaded"} desc={calc?.desc || "Not Loaded"} id={e.id}/>
-                                    }) : <h2>empty</h2>}
+                                    }) : <h2>Add bookmarks to get started!</h2>}
                         </div>
                     </div>
                 </div>

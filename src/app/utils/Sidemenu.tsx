@@ -13,7 +13,6 @@ export default function Sidemenu({isNavOpen}: Props){
         <ul className={`menu bg-base-200 rounded-box
     w-[300px] h-full
     fixed top-[60px] left-0 z-40
-
     transform-gpu will-change-transform
     transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isNavOpen 
       ? "translate-x-0 opacity-100 visible" 

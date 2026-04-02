@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect, useState } from "react";
+
 export default function GetQuote(){
     const quotes = [
         {
@@ -107,7 +109,11 @@ export default function GetQuote(){
             author: "Steve Goodier"
         }
     ];
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    const [quote, setQuote] = useState<{quote:string, author:string}>({quote:"", author:""});
+    useEffect(() => {
+        setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+    }, [])
+    
     return(
             <div className="mt-5">
                 <div className="chat chat-start">
