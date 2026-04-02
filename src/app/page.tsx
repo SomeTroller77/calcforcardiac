@@ -42,7 +42,7 @@ export default function Home(){
                 <h1 className="text-5xl font-bold text-red-500">CalcForCardiac: <span
   ref={el}
   className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
-/></h1><h1 className="text-5xl font-bold text-blue-500"> calculator</h1>
+/></h1><h1 className="text-5xl font-bold text-blue-500"> medical calculator</h1>
                 <p className="py-6">
                   When every second counts, clarity matters. CalcForCardiac gives you instant, precise cardiac calculations — no clutter, no login, just what you need.
                 </p>
