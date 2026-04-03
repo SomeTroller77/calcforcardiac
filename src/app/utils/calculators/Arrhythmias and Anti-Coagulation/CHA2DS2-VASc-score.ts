@@ -17,7 +17,7 @@ const parameters:Input[] = [
     },
     {
         id:"age",
-        name:"age",
+        name:"Age",
         type:"number",
         placeholder:"Enter the age",
         required:true,

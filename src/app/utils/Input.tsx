@@ -10,7 +10,7 @@ export default function InputComponent({id, type, inputOptions, min, max, requir
     if(type === "number"){
         return(
             <>
-                <fieldset className="fieldset">
+                <fieldset className="fieldset bg-white bg-base-100 border border-base-300 rounded-box w-full min-w-0 p-2 overflow-visible">
                     <legend className="fieldset-legend text-black">{ typeof info === "string" ? 
                     <>
                     <div className="tooltip inline-block max-w-[140px] overflow-visible" data-tip={info}>
@@ -59,7 +59,7 @@ export default function InputComponent({id, type, inputOptions, min, max, requir
         );
     } else if(type === "select"){
         return(
-            <fieldset className="fieldset">
+            <fieldset className="fieldset bg-white bg-base-100 border border-base-300 rounded-box w-full min-w-0 p-2 overflow-visible">
                 <legend className="fieldset-legend text-black"> { info ? 
                     <>
                     <div className="tooltip inline-block" data-tip={info}>
