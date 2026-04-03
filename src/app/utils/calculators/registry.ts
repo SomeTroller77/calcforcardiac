@@ -8,6 +8,7 @@ import { cha2ds2 } from "./Arrhythmias and Anti-Coagulation/CHA2DS2-VASc-score";
 import { MELDNa } from "./Utilities/MELDNa";
 import { GRACE_Inhosp } from "./Emergency/GRACE_Inhosp";
 import { HEART_Score } from "./General Cardiology/HEART_Score";
+import { HASBLED } from "./Arrhythmias and Anti-Coagulation/HAS-BLED";
 
 export const CalculatorRegistry : Record<string, Section> = {
     generalCardiology:{
@@ -25,7 +26,8 @@ export const CalculatorRegistry : Record<string, Section> = {
         textColor:"#ccc",
         svg:"",
         calculators:[
-            cha2ds2
+            cha2ds2,
+            HASBLED
         ]
     },
     emergency:{
