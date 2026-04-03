@@ -16,7 +16,7 @@ export interface Input{
     id:string,
     name:string,
     placeholder?:string,
-    type: "number" | "text" | "select" | "checkbox",
+    type: "number" | "text" | "select" | "checkbox" | "search",
     inputOptions?:inputOptions[],
     min?:number,
     max?:number,

@@ -5,6 +5,9 @@ import { MELD } from "./Utilities/MELD";
 import { MAP } from "./General Cardiology/MAP";
 import { TIMI } from "./Emergency/TIMI_score";
 import { cha2ds2 } from "./Arrhythmias and Anti-Coagulation/CHA2DS2-VASc-score";
+import { MELDNa } from "./Utilities/MELDNa";
+import { GRACE_Inhosp } from "./Emergency/GRACE_Inhosp";
+import { HEART_Score } from "./General Cardiology/HEART_Score";
 
 export const CalculatorRegistry : Record<string, Section> = {
     generalCardiology:{
@@ -31,7 +34,9 @@ export const CalculatorRegistry : Record<string, Section> = {
         textColor:"#ccc",
         svg:"",
         calculators:[
-            TIMI
+            TIMI,
+            GRACE_Inhosp,
+            HEART_Score
         ]
     },
     transplantation:{
@@ -50,7 +55,8 @@ export const CalculatorRegistry : Record<string, Section> = {
         svg:"",
         calculators:[
             cockcroftGault,
-            MELD
+            MELD,
+            MELDNa
         ]
     }
 }
