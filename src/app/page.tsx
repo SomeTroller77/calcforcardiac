@@ -59,7 +59,10 @@ export default function Home(){
               </div>
             </div>
           </div>
-          <div className="max-w-6xl mx-auto px-4 mt-1">
+          <div className="flex gap-4 justify-center overflow-hidden">
+            <img src="./website_calculators.gif" width={800}/>
+          </div>
+          <div className="max-w-6xl mx-auto px-4 mt-20">
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 tracking-tight text-white">
               Start with What You Need
             </h2>
