@@ -8,7 +8,6 @@ export default function Section({sectionName, Calculators, id} : {sectionName:st
     useEffect(() => {
         const bookmarkedStr:string = localStorage.getItem("bookmarks") || "[]";
         const bookmarkedObj : {section:string, id:string}[] = JSON.parse(bookmarkedStr);
-        console.log(bookmarkedObj);
         setBookmarks(bookmarkedObj);
     }, [])
     return(

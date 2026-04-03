@@ -23,6 +23,7 @@ export interface Input{
     required?:boolean,
     defaultUnit?:string,
     unitOptions?:string[],
+    info?: string,
     handleDataChange?:Function    
 }
 

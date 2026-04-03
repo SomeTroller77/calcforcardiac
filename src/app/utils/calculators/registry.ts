@@ -4,6 +4,7 @@ import { Section } from "./types";
 import { MELD } from "./Utilities/MELD";
 import { MAP } from "./General Cardiology/MAP";
 import { TIMI } from "./Emergency/TIMI_score";
+import { cha2ds2 } from "./Arrhythmias and Anti-Coagulation/CHA2DS2-VASc-score";
 
 export const CalculatorRegistry : Record<string, Section> = {
     generalCardiology:{
@@ -13,6 +14,15 @@ export const CalculatorRegistry : Record<string, Section> = {
         svg:"",
         calculators:[
             MAP
+        ]
+    },
+    arrhythmias:{
+        id:"arrhythmias",
+        displayName:"Arrhythmias & Anti-Coagulation",
+        textColor:"#ccc",
+        svg:"",
+        calculators:[
+            cha2ds2
         ]
     },
     emergency:{

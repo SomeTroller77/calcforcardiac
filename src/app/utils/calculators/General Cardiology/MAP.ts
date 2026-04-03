@@ -4,18 +4,20 @@ const parameters : Input[] = [
     {
         id:"sbp",
         name:"Systolic Blood Pressure",
-        placeholder:"Enter the Systolic Blood Pressure in mmHg",
+        placeholder:"Enter the Systolic Blood Pressure",
         type:"number",
         required:true,
-        min:0
+        min:0,
+        defaultUnit:"mmHg",
     },
     {
         id:"dbp",
         name:"Diastolic Blood Pressure",
-        placeholder:"Enter the Disatolic Blood Pressure in mmHg",
+        placeholder:"Enter the Disatolic Blood Pressure",
         type:"number",
         required:true,
-        min:0
+        min:0,
+        defaultUnit:"mmHg"
     }
 ]
 

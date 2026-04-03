@@ -10,14 +10,15 @@ const parameters:Input[] = [
     },
     {
         id:"isCAD",
-        name:"Known Coronary Artery Disease (stenosis >= 50%)",
-        placeholder:"Whether the patient has a known CAD with more than 50% stenosis",
+        name:"Known Coronary Artery Disease",
+        placeholder:"Whether the patient has a known CAD with more than or equal to 50% stenosis",
         type:"checkbox"
     },
     {
         id:"cadRiskFactors",
         name:"CAD Risk Factors",
-        placeholder:"Whether the patient has 3 or more than 3 CAD Risk Factors (Family history of CAD, Hypertension, Hypercholesterolemia, Diabetes, Smoker)",
+        placeholder:"Whether the patient has 3 or more than 3 CAD Risk Factors",
+        info:"Hypertension, hypercholesterolemia, diabetes, family history of CAD, or current smoker",
         type:"checkbox"
     },
     {
@@ -41,8 +42,9 @@ const parameters:Input[] = [
     {
         id:"biomarkers",
         name:"Elevated Serum cardiac biomarkers",
-        placeholder:"Whether the patient has Elevated Serum cardiac biomarkers (Troponin levels, creatine kinase etc)",
-        type:"checkbox"
+        placeholder:"Whether the patient has Elevated Serum cardiac biomarkers",
+        type:"checkbox",
+        info:"Troponin levels, creatine kinase"
     }
 ];
 

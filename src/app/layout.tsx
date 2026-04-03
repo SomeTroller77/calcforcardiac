@@ -6,6 +6,12 @@ import { Analytics } from "@vercel/analytics/next"
 export const metadata: Metadata = {
   title: "CalcForCardiac",
   description: "A zero friction and zero login medical calculator made by Saksham Vitwekar (SomeTroller77)",
+  authors:[{name:"Saksham Vitwekar"}],
+  openGraph:{
+    title:"CalcForCardiac",
+    description:"A mininal friction and zero login medical calculator especially for cardiologists",
+    images:["/calcforcardiac_logo.png"]
+  }
 };
 
 export default function RootLayout({

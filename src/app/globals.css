@@ -71,3 +71,9 @@
 .animate-ecg {
   animation: ecgMove 6s linear infinite;
 }
+.tooltip::before {
+  max-width: 90vw;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  white-space: normal;
+}

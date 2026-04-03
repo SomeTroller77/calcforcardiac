@@ -12,7 +12,7 @@ export default function LayoutClient({children} : {children:React.ReactNode}){
             <Navbar navbarToggle={setNavbar}/>
             <Sidemenu isNavOpen={navbar}/>
             <div className="content w-full flex justify-center px-4 pb-6">
-                <div className="max-w-2xl overflow-x-hidden">
+                <div className="max-w-2xl">
                     {children}
                 </div>
             </div>
