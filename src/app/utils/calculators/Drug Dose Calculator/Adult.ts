@@ -96,27 +96,27 @@ export const Adult_Drug_Calculator:Calculator = {
             if(typeof drug.cld_dosing !== "undefined" && typeof drug.ckd_dosing !== "undefined" && ckd !== "none" && cld == "none"){
                 const dosingObj = drug.cld_dosing.find(e => e.stage === cld);
                 if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj?.dosing * weight)} ${drug.unit}`;
+                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
                 }else{
-                    return `${Math.floor(dosingObj?.dosing)} ${drug.unit}` || 0;
+                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
                 }
             }else if(typeof drug.cld_dosing !== "undefined" && cld !== "none"){
                 const dosingObj = drug.cld_dosing.find(e => e.stage === cld);
                 if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj?.dosing * weight)} ${drug.unit}`;
+                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
                 }else{
-                    return `${Math.floor(dosingObj?.dosing)} ${drug.unit}` || 0;
+                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
                 }
             }else if(typeof drug.ckd_dosing !== "undefined" && ckd !== "none"){
                 const dosingObj = drug.ckd_dosing.find(e => e.stage === ckd);
                 if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj?.dosing * weight)} ${drug.unit}`;
+                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
                 }else{
-                    return `${Math.floor(dosingObj?.dosing)} ${drug.unit}` || 0;
+                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
                 }
             }else{
                 if(drug.isWeightBased){
-                    return `${Math.floor(drug.adult_dosing * weight)} ${drug.unit}`;
+                    return `${Math.floor(drug!.adult_dosing * weight)} ${drug.unit}`;
                 }else{
                     return `${drug.adult_dosing} ${drug.unit}`;
                 }
