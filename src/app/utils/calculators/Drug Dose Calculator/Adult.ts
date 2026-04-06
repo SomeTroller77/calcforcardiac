@@ -3,14 +3,12 @@ import { DrugRegistry } from "./drugs/drug_registry"
 
 function generateDrugList():inputOptions[] {
     const drugs:inputOptions[] = DrugRegistry.map(e => {
-        console.log(e.name);
         const drug:inputOptions = {
             label:e.name,
             value:e.id
         }
         return drug;
     });
-    console.log(drugs);
     return drugs;
 }
 const parameters:Input[] = [
@@ -92,33 +90,44 @@ export const Adult_Drug_Calculator:Calculator = {
         const ckd = values.ckd as "none" | "3A" | "3B" | "4" | "5";
         const cld = values.cld as "none" | "A" | "B" | "C";
         const drug = DrugRegistry.find(e => e.id === drugID);
+        if(!drug) return -1;
+        const dosingObj_CLD = drug.cld_dosing?.find(e => e.stage === cld);
+        const dosingObj_CKD = drug.ckd_dosing?.find(e => e.stage === ckd);
         if(drug){
-            if(typeof drug.cld_dosing !== "undefined" && typeof drug.ckd_dosing !== "undefined" && ckd !== "none" && cld == "none"){
-                const dosingObj = drug.cld_dosing.find(e => e.stage === cld);
-                if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
+            if(dosingObj_CLD && dosingObj_CKD && ckd !== "none" && cld !== "none"){
+                if(dosingObj_CLD.dosing === 0 || dosingObj_CKD.dosing === 0){
+                        return 0;
+                    }
+                if(drug.isWeightBased && typeof dosingObj_CLD.dosing === "number"){
+                    return `${Math.floor(dosingObj_CLD.dosing * weight)} ${drug.unit}`
                 }else{
-                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
+                    return `${dosingObj_CLD.dosing} ${drug.unit}`
                 }
-            }else if(typeof drug.cld_dosing !== "undefined" && cld !== "none"){
-                const dosingObj = drug.cld_dosing.find(e => e.stage === cld);
-                if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
-                }else{
-                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
+            }else if(dosingObj_CLD && cld !== "none"){
+                if(dosingObj_CLD.dosing === 0){
+                    return 0;
                 }
-            }else if(typeof drug.ckd_dosing !== "undefined" && ckd !== "none"){
-                const dosingObj = drug.ckd_dosing.find(e => e.stage === ckd);
-                if(drug.isWeightBased){
-                    return `${Math.floor(dosingObj!.dosing * weight)} ${drug.unit}`;
+                if(drug.isWeightBased && typeof dosingObj_CLD.dosing === "number"){
+                    
+                    return `${Math.floor(dosingObj_CLD.dosing * weight)} ${drug.unit}`
                 }else{
-                    return `${Math.floor(dosingObj!.dosing)} ${drug.unit}` || 0;
+                    return `${dosingObj_CLD.dosing} ${drug.unit}`
+                }
+            }else if(dosingObj_CKD && ckd !== "none"){
+                if(dosingObj_CKD.dosing === 0){
+                    return 0;
+                }
+                if(drug.isWeightBased && typeof dosingObj_CKD.dosing === "number"){
+                    
+                    return `${Math.floor(dosingObj_CKD.dosing * weight)} ${drug.unit}`
+                }else{
+                    return `${dosingObj_CKD.dosing} ${drug.unit}`
                 }
             }else{
-                if(drug.isWeightBased){
-                    return `${Math.floor(drug!.adult_dosing * weight)} ${drug.unit}`;
+                if(drug.isWeightBased && typeof drug.adult_dosing === "number"){
+                    return `${Math.floor(drug.adult_dosing * weight)} ${drug.unit}`
                 }else{
-                    return `${drug.adult_dosing} ${drug.unit}`;
+                    return `${drug.adult_dosing} ${drug.unit}`
                 }
             }
         }else{

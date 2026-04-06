@@ -18,7 +18,9 @@ export const Atorvastatin:Drug = {
         },
         {
             stage:"C",
-            to_be_given:false
+            to_be_given:false,
+            dosing:0,
+            max_dose:0
         }
     ]
 };

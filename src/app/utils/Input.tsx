@@ -130,7 +130,6 @@ export default function InputComponent({id, type, inputOptions, min, max, requir
             </fieldset>
         )
     }else if(type === "search"){
-        console.log('ran');
         return (
             <fieldset className="fieldset">
                 <legend className="fieldset-legend text-black">
